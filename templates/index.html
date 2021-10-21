@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+{% block content %}<br><br>
+<form class="form-inline"  action="create" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="expression">Enter expression</label>&nbsp;&nbsp;
+        <input type="text" name="expression" class="form-control" style="width:50%;" required="required"/></div><br><br>
+              <button type="submit" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-plus"></span> calculate</button>
+            </form> <br><br>Result : {{result}}
+             
+    
+
+
+
+
+
+{% endblock %}
+
+{% endblock %}

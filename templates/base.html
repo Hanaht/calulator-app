@@ -1,0 +1,21 @@
+{% extends 'home.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+{% if user.is_authenticated %}
+    Hi {{ user.username }}!
+    <form class="form-inline"  action="create" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="expression">expression</label>
+            <input type="text" name="expression" class="form-control" style="width:30%;" required="required"/>
+                  <button type="submit" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-plus"></span> ADD</button>
+                  
+        </div>
+    </form>
+    <br />
+{% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">Log In</a> |
+    <a href="{% url 'signup' %}">Sign Up</a>
+{% endif %}
+{% endblock content %}

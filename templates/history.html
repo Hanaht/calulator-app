@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h3>CALCULATOR HISTORY</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<table class="table table-bordered">
+    <thead class="alert-warning">
+        <tr>
+            <th>Expression</th>
+            <th>Result</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        {% for calculatort in calculatorts %}
+        <tr>
+            <td>{{ calculatort.expression }}</td>
+            <td>{{ calculatort.results }}</td>
+             
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+{% endblock %}
